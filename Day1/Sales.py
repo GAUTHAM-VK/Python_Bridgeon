@@ -1,0 +1,10 @@
+sales=[1200, 1500, 900, 1800, 2200, 1700,1300]
+print(sales)
+total=sum(sales)
+average=total/len(sales)
+highest=max(sales)
+lowest=(min(sales))
+print("Total sales", total)
+print("Average sales", average)
+print("Highest sales", highest)
+print("Lowest sales", lowest)
