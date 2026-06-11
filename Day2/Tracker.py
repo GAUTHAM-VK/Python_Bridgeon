@@ -39,15 +39,15 @@ def add_expense(amount, category):
 @log_call
 def get_summary():
     expenses = load_expense()
-    summary = {}                              # ✅ Fixed: dictionary not tuple
+    summary = {}                             
     for expense in expenses:
         category = expense["Category"]
         amount = expense["Amount"]
         summary[category] = summary.get(category, 0) + amount
-    print("\nExpense Summary:")               # ✅ Fixed: outside loop
+    print("\nExpense Summary:")               
     for category, total in summary.items():
         print(f"{category}: ₹{total}")
-    return summary                            # ✅ Fixed: outside loop
+    return summary                            
 
 # View all expenses
 @log_call
@@ -66,7 +66,7 @@ def read_logs():
         counts = {}
         with open(log_file, "r") as file:
             for line in file:
-                parts = line.split("|")       # ✅ Fixed: log now uses | separator
+                parts = line.split("|")       
                 if len(parts) >= 2:
                     func_name = parts[1].strip()
                     counts[func_name] = counts.get(func_name, 0) + 1
